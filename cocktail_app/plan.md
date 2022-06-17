@@ -16,3 +16,5 @@ HACKATHON PLAN
 8. Leave reviews field which uses to-do-list code to have it appear on the screen
 9. CSS!
 10. Place an order button that delivers the cocktail by drone in under 10mins
+
+Also try to practice GIT branch - and merging
