@@ -1,5 +1,9 @@
 .App {
   text-align: center;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  height: 100%;
 }
 
 .App-logo {
@@ -36,6 +40,7 @@
     transform: rotate(360deg);
   }
 }
+
 #cocktail_img {
   width: 250px;
   height: 250px;
@@ -50,14 +55,16 @@
 
 #instructions {
   font-size: smaller;
-  padding-left: 250px;
-  padding-right: 250px;
+  /* padding-left: 250px;
+  padding-right: 250px; */
   justify-content: center;
+  padding-bottom: 100px;
 }
 
 h1 {
   font-family: "Fascinate Inline", cursive;
   font-size: 2.5em;
+  color: white;
 }
 
 #main_text {
@@ -65,7 +72,7 @@ h1 {
 }
 
 #button {
-  font-size: 0.8em;
+  font-size: 0.7em;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
 }
@@ -78,4 +85,33 @@ h1 {
 
 #instructions {
   font-weight: 200;
+  /* background-color: #c0d6df;
+  border-radius: 10%; */
+  margin-left: 250px;
+  margin-right: 250px;
+  /* padding-bottom: 10px; */
 }
+
+#main_body {
+  background-color: #c0d6df;
+  border-radius: 10%;
+  margin-left: 250px;
+  margin-right: 250px;
+  padding-bottom: 10px;
+}
+
+#heading_body {
+  background-color: coral;
+  border-radius: 20%;
+  margin-left: 275px;
+  margin-right: 275px;
+}
+
+/* #background_img {
+  background: url(https://images.unsplash.com/photo-1515238152791-8216bfdf89a7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2072&q=80)
+    no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+} */

@@ -57,35 +57,41 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Random Cocktail Generator</h1>
-      <p id="main_text">Show me a cocktail with...</p>
-      <button id="button" onClick={handleUserChoice}>
-        Gin
-      </button>
-      <button id="button">Whiskey</button>
-      <button id="button">Vodka</button>
-      <button id="button">Rum</button>
-      <button id="button">No Alcohol</button>
-      <br />
-      <p id="main_text">Or just get me </p>
-      <button id="button" onClick={handleClick}>
-        A Random Cocktail
-      </button>
-
-      <p id="name">{name}</p>
-      <img src={image} alt="cocktail" id="cocktail_img" />
-      <CocktailViewer id={id} />
-      <p id="main_text">You'll need...</p>
-      <p id="ingredient_text">
-        {strMeasure1} of {ingredient1},
-      </p>
-      <p id="ingredient_text">
-        {strMeasure2} of {ingredient2},
-      </p>
-      <p id="ingredient_text">
-        {strMeasure3} of {ingredient3},
-      </p>
-      <p id="instructions">{instructions}</p>
+      <div id="background_img">
+        <div id="heading_body">
+          <h1>Random Cocktail Generator</h1>
+        </div>
+        <p id="main_text">Show me a cocktail with...</p>
+        <button id="button" onClick={handleUserChoice}>
+          Gin
+        </button>
+        <button id="button">Whiskey</button>
+        <button id="button">Vodka</button>
+        <button id="button">Rum</button>
+        <button id="button">No Alcohol</button>
+        <br />
+        <p id="main_text">Or just get me </p>
+        <button id="button" onClick={handleClick}>
+          A Random Cocktail
+        </button>
+        <div id="main_body">
+          <p id="name">{name}</p>
+          <img src={image} alt="cocktail" id="cocktail_img" />
+          <CocktailViewer id={id} />
+          <p id="main_text">You'll need...</p>
+          <p id="ingredient_text">
+            {strMeasure1} of {ingredient1},
+          </p>
+          <p id="ingredient_text">
+            {strMeasure2} of {ingredient2},
+          </p>
+          <p id="ingredient_text">
+            {strMeasure3} of {ingredient3},
+          </p>
+        </div>
+        <p id="main_text">Instructions</p>
+        <p id="instructions">{instructions}</p>
+      </div>
     </div>
   );
 }
