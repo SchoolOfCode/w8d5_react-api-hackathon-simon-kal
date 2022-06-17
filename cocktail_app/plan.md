@@ -16,3 +16,6 @@ HACKATHON PLAN
 8. Leave reviews field which uses to-do-list code to have it appear on the screen
 9. CSS!
 10. Place an order button that delivers the cocktail by drone in under 10mins
+11. Set up a branch called "Simon"
+12. Change the plan.md to include these changes
+13. Try merging it with the main to see how it reacts as Kal has changed things too.
