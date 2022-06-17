@@ -11,6 +11,7 @@ function App() {
   const [ingredient1, setIngredient1] = useState();
   const [ingredient2, setIngredient2] = useState();
   const [ingredient3, setIngredient3] = useState();
+  const [strMeasure1, setMeasure1] = useState();
 
   useEffect(() => {
     async function fetchCocktail() {
@@ -26,6 +27,7 @@ function App() {
       setIngredient1(response.drinks[0].strIngredient1);
       setIngredient2(response.drinks[0].strIngredient2);
       setIngredient3(response.drinks[0].strIngredient3);
+      setMeasure1(response.drinks[0].strMeasure1);
     }
     fetchCocktail();
   }, [id]);
@@ -38,12 +40,13 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Random Cocktail Generator!</h1>
+      <h1>Random Cocktail Generator</h1>
       <p>I need a cocktail with...</p>
       <button>Gin</button>
       <button>Whiskey</button>
       <button>Vodka</button>
       <button>Rum</button>
+      <button>No Alcohol</button>
       <br />
       <p>Or just get me </p>
       <button onClick={handleClick}>A Random Cocktail</button>
@@ -52,9 +55,12 @@ function App() {
       <img src={image} alt="cocktail" id="cocktail_img" />
       <CocktailViewer id={id} />
       <p id="instructions">{instructions}</p>
-      <p>{ingredient1}</p>
-      <p>{ingredient2}</p>
-      <p>{ingredient3}</p>
+      <p>You'll need...</p>
+      <p>
+        {strMeasure1} of {ingredient1},
+      </p>
+      <p>{ingredient2},</p>
+      <p>{ingredient3},</p>
     </div>
   );
 }

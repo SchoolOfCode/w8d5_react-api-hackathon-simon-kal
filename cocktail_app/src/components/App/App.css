@@ -48,7 +48,12 @@
 
 #instructions {
   font-size: smaller;
-  padding-left: 150px;
-  padding-right: 150px;
+  padding-left: 250px;
+  padding-right: 250px;
   justify-content: center;
+}
+
+h1 {
+  font-family: "Fascinate", cursive;
+  font-size: 2.5em;
 }
