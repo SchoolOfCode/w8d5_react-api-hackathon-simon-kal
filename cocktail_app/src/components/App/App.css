@@ -36,3 +36,19 @@
     transform: rotate(360deg);
   }
 }
+#cocktail_img {
+  width: 250px;
+  height: 250px;
+  border: 1px solid black;
+}
+
+#name {
+  font-size: large;
+}
+
+#instructions {
+  font-size: smaller;
+  padding-left: 150px;
+  padding-right: 150px;
+  justify-content: center;
+}
