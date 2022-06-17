@@ -43,7 +43,9 @@
 }
 
 #name {
-  font-size: large;
+  font-family: "Fascinate", cursive;
+  font-size: 1.5em;
+  font-weight: 300;
 }
 
 #instructions {
@@ -54,6 +56,26 @@
 }
 
 h1 {
-  font-family: "Fascinate", cursive;
+  font-family: "Fascinate Inline", cursive;
   font-size: 2.5em;
+}
+
+#main_text {
+  font-weight: 200;
+}
+
+#button {
+  font-size: 0.8em;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+#ingredient_text {
+  font-size: 0.8em;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+#instructions {
+  font-weight: 200;
 }

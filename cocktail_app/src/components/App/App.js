@@ -1,7 +1,7 @@
 import "./App.css";
 import CocktailViewer from "../CocktailDisplay";
 import { useEffect, useState } from "react";
-import CocktailName from "../CocktailName";
+// import CocktailName from "../CocktailName";
 
 function App() {
   const [id, setId] = useState();
@@ -12,6 +12,8 @@ function App() {
   const [ingredient2, setIngredient2] = useState();
   const [ingredient3, setIngredient3] = useState();
   const [strMeasure1, setMeasure1] = useState();
+  const [strMeasure2, setMeasure2] = useState();
+  const [strMeasure3, setMeasure3] = useState();
 
   useEffect(() => {
     async function fetchCocktail() {
@@ -28,6 +30,8 @@ function App() {
       setIngredient2(response.drinks[0].strIngredient2);
       setIngredient3(response.drinks[0].strIngredient3);
       setMeasure1(response.drinks[0].strMeasure1);
+      setMeasure2(response.drinks[0].strMeasure2);
+      setMeasure3(response.drinks[0].strMeasure3);
     }
     fetchCocktail();
   }, [id]);
@@ -38,29 +42,50 @@ function App() {
     console.log(randomId);
   }
 
+  function handleUserChoice() {
+    async function ginFilter() {
+      let response = await fetch(
+        `https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=Gin`
+      );
+      response = await response.json();
+      console.log(response);
+      setImage(response.drinks[0].strDrinkThumb);
+      setName(response.drinks[0].strDrink);
+    }
+    ginFilter();
+  }
+
   return (
     <div className="App">
       <h1>Random Cocktail Generator</h1>
-      <p>I need a cocktail with...</p>
-      <button>Gin</button>
-      <button>Whiskey</button>
-      <button>Vodka</button>
-      <button>Rum</button>
-      <button>No Alcohol</button>
+      <p id="main_text">Show me a cocktail with...</p>
+      <button id="button" onClick={handleUserChoice}>
+        Gin
+      </button>
+      <button id="button">Whiskey</button>
+      <button id="button">Vodka</button>
+      <button id="button">Rum</button>
+      <button id="button">No Alcohol</button>
       <br />
-      <p>Or just get me </p>
-      <button onClick={handleClick}>A Random Cocktail</button>
+      <p id="main_text">Or just get me </p>
+      <button id="button" onClick={handleClick}>
+        A Random Cocktail
+      </button>
 
       <p id="name">{name}</p>
       <img src={image} alt="cocktail" id="cocktail_img" />
       <CocktailViewer id={id} />
-      <p id="instructions">{instructions}</p>
-      <p>You'll need...</p>
-      <p>
+      <p id="main_text">You'll need...</p>
+      <p id="ingredient_text">
         {strMeasure1} of {ingredient1},
       </p>
-      <p>{ingredient2},</p>
-      <p>{ingredient3},</p>
+      <p id="ingredient_text">
+        {strMeasure2} of {ingredient2},
+      </p>
+      <p id="ingredient_text">
+        {strMeasure3} of {ingredient3},
+      </p>
+      <p id="instructions">{instructions}</p>
     </div>
   );
 }
