@@ -17,8 +17,8 @@ HACKATHON PLAN
 9. CSS!
 10. Place an order button that delivers the cocktail by drone in under 10mins
 
-Also try to practice GIT branch - and merging
+Also try to practice GIT branch - and merging ✅
 
-11. Set up a branch called "Simon"
-12. Change the plan.md to include these changes
-13. Try merging it with the main to see how it reacts as Kal has changed things too.
+11. Set up a branch called "Simon" ✅
+12. Change the plan.md to include these changes ✅
+13. Try merging it with the main to see how it reacts as Kal has changed things too. ✅

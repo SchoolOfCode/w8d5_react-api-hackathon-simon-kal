@@ -42,17 +42,35 @@ function App() {
     console.log(randomId);
   }
 
-  function handleUserChoice() {
-    async function ginFilter() {
+  function handleNoAlcohol(choice) {
+    console.log(choice);
+    async function noAlcohol() {
       let response = await fetch(
-        `https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=Gin`
+        `https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Non_Alcoholic`
+      );
+      response = await response.json();
+      const randomId = Math.floor(Math.random() * (1500 - 1 + 1)) + 1;
+      console.log(response);
+      setImage(response.drinks[randomId].strDrinkThumb);
+      setName(response.drinks[randomId].strDrink);
+    }
+    noAlcohol();
+  }
+
+
+
+  function handleUserChoice(spiritChoice) {
+    console.log(spiritChoice);
+    async function spiritFilter() {
+      let response = await fetch(
+        `https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${spiritChoice}`
       );
       response = await response.json();
       console.log(response);
       setImage(response.drinks[0].strDrinkThumb);
       setName(response.drinks[0].strDrink);
     }
-    ginFilter();
+    spiritFilter();
   }
 
   return (
@@ -62,13 +80,13 @@ function App() {
           <h1>Random Cocktail Generator</h1>
         </div>
         <p id="main_text">Show me a cocktail with...</p>
-        <button id="button" onClick={handleUserChoice}>
+        <button id="button" onClick={(e) => handleUserChoice(e.target.innerHTML)}>
           Gin
         </button>
-        <button id="button">Whiskey</button>
-        <button id="button">Vodka</button>
-        <button id="button">Rum</button>
-        <button id="button">No Alcohol</button>
+        <button id="button" onClick={(e) => handleUserChoice(e.target.innerHTML)}>Whiskey</button>
+        <button id="button" onClick={(e) => handleUserChoice(e.target.innerHTML)}>Vodka</button>
+        <button id="button" onClick={(e) => handleUserChoice(e.target.innerHTML)}>Rum</button>
+        <button id="button" onClick={(e) => handleNoAlcohol(e.target.innerHTML)}>No Alcohol</button>
         <br />
         <p id="main_text">Or just get me </p>
         <button id="button" onClick={handleClick}>
